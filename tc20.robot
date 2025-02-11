@@ -77,6 +77,7 @@ except AssertionError as e:
 finally:
     # Close the browser
     driver.quit()
+
 *** Settings ***
 Library    SeleniumLibrary
 
