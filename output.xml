@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T10:04:41.299457" rpa="false" schemaversion="5">
+<suite id="s1" name="Tc20" source="C:\Users\entit\Downloads\tc20\tc20.robot">
+<test id="s1-t1" name="Verify Google Homepage" line="84">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-11T10:04:41.789006" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>https://www.google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-11T10:04:41.788748" elapsed="6.834891"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-11T10:04:48.624036" elapsed="2.129056"/>
+</kw>
+<status status="PASS" start="2025-02-11T10:04:41.787785" elapsed="8.965893"/>
+</test>
+<status status="PASS" start="2025-02-11T10:04:41.300924" elapsed="9.453799"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tc20" id="s1" pass="1" fail="0" skip="0">Tc20</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

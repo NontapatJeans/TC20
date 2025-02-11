@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Set up WebDriver
-driver_path = ""C:\Users\entit\Downloads\chrome-win64\chrome-win64""  # Update with your driver path
+driver_path = "C:\Users\entit\Downloads\chrome-win64\chrome-win64"  # Update with your driver path
 driver = webdriver.Chrome(driver_path)
 
 try:
@@ -77,3 +77,10 @@ except AssertionError as e:
 finally:
     # Close the browser
     driver.quit()
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Test Cases ***
+Verify Google Homepage
+    Open Browser    https://www.google.com    chrome
+    Close Browser
