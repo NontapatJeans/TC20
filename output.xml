@@ -1,30 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T10:04:41.299457" rpa="false" schemaversion="5">
-<suite id="s1" name="Tc20" source="C:\Users\entit\Downloads\tc20\tc20.robot">
-<test id="s1-t1" name="Verify Google Homepage" line="84">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-02-11T10:12:16.379473" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="C:\Users\entit\Downloads\tc20\test.robot">
+<test id="s1-t1" name="Test Case 20: Search Products and Verify Cart After Login" line="12">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-11T10:04:41.789006" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
-<arg>https://www.google.com</arg>
-<arg>chrome</arg>
+<msg time="2025-02-11T10:12:16.674996" level="INFO">Opening browser 'chrome' to base url 'http://automationexercise.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-11T10:04:41.788748" elapsed="6.834891"/>
+<status status="PASS" start="2025-02-11T10:12:16.674744" elapsed="5.565382"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-11T10:12:22.240460" elapsed="0.039320"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-11T10:12:22.280370" elapsed="0.015337"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-02-11T10:12:22.296623" level="INFO">Clicking link 'Products'.</msg>
+<msg time="2025-02-11T10:12:22.476439" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-11T10:12:22.476705" level="FAIL">Link with locator 'Products' not found.</msg>
+<arg>Products</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-11T10:12:22.295990" elapsed="0.184896">Link with locator 'Products' not found.</status>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>All Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.481163" elapsed="0.000039"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id=search_product</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.481348" elapsed="0.000024"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>id=search_product</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.481514" elapsed="0.000023"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>SEARCHED PRODUCTS</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.481670" elapsed="0.000023"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>${products}</var>
+<arg>class=productinfo</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.481823" elapsed="0.000022"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${products}</arg>
+<arg>No searched products found</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.482062" elapsed="0.000025"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>${add_buttons}</var>
+<arg>xpath=//a[contains(@class, 'add-to-cart')]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.482218" elapsed="0.000026"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${add_buttons}[0]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.482375" elapsed="0.000023"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.482520" elapsed="0.000023"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>//button[contains(text(), 'Continue Shopping')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.482648" elapsed="0.000022"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${add_buttons}[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.482776" elapsed="0.000022"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.482905" elapsed="0.000023"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>//button[contains(text(), 'Continue Shopping')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.483032" elapsed="0.000021"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<arg>Cart</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.483201" elapsed="0.000022"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Shopping Cart</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.483356" elapsed="0.000023"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>${cart_items}</var>
+<arg>class=cart_description</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.483559" elapsed="0.000042"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${cart_items}</arg>
+<arg>Cart is empty before login</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.484053" elapsed="0.000107"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<arg>Signup / Login</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.484580" elapsed="0.000047"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=email</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.484934" elapsed="0.000056"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.485208" elapsed="0.000033"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.485419" elapsed="0.000032"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>//button[contains(text(), 'Login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.485955" elapsed="0.000091"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<arg>Cart</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.486370" elapsed="0.000043"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Shopping Cart</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.486757" elapsed="0.000064"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<var>${cart_items_after_login}</var>
+<arg>class=cart_description</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.487129" elapsed="0.000054"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<arg>${cart_items_after_login}</arg>
+<arg>Cart is empty after login</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="NOT RUN" start="2025-02-11T10:12:22.487430" elapsed="0.000035"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-11T10:04:48.624036" elapsed="2.129056"/>
+<status status="NOT RUN" start="2025-02-11T10:12:22.487799" elapsed="0.000039"/>
 </kw>
-<status status="PASS" start="2025-02-11T10:04:41.787785" elapsed="8.965893"/>
+<status status="FAIL" start="2025-02-11T10:12:16.673852" elapsed="5.814261">Link with locator 'Products' not found.</status>
 </test>
-<status status="PASS" start="2025-02-11T10:04:41.300924" elapsed="9.453799"/>
+<status status="FAIL" start="2025-02-11T10:12:16.381181" elapsed="6.107931"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Tc20" id="s1" pass="1" fail="0" skip="0">Tc20</stat>
+<stat name="Test" id="s1" pass="0" fail="1" skip="0">Test</stat>
 </suite>
 </statistics>
 <errors>
